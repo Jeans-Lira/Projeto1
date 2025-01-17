@@ -1,17 +1,20 @@
+<!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portal de Vagas de Emprego</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <header>
         <nav>
-            <h1>Portal de Vagas</h1>
+            <h1>Empregos Londrina e Região</h1>
             <ul>
-                <li><a href="#">Início</a></li>
-                <li><a href="#vagas">Vagas</a></li>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="vagas.html">Vagas</a></li>
                 <li><a href="#sobre">Sobre</a></li>
                 <li><a href="#contato">Contato</a></li>
             </ul>
@@ -19,26 +22,41 @@
     </header>
 
     <main>
+        <section id="publicidade">
+            <!-- <h2>Espaço Publicitário</h2>-->
+            <div id="publicidade-carousel" class="carousel">
+                <div class="carousel-container">
+                    <div class="carousel-slide">
+                        <div class="anuncio">
+                            <img src="anuncio1.jpg" alt="Anúncio de Empresa 1">
+                            <p>Confira os serviços da Empresa 1!</p>
+                        </div>
+                        <div class="anuncio">
+                            <img src="anuncio2.jpg" alt="Anúncio de Empresa 2">
+                            <p>Conheça os produtos da Empresa 2!</p>
+                        </div>
+                        <div class="anuncio">
+                            <img src="anuncio3.jpg" alt="Anúncio de Empresa 3">
+                            <p>Descubra as vantagens oferecidas pela Empresa 3!</p>
+                        </div>
+                    </div>
+                </div>
+                <!--<button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+                <button class="next" onclick="moveSlide(1)">&#10095;</button> -->
+            </div>
+        </section>
+
         <section id="vagas">
             <h2>Vagas Disponíveis</h2>
-            <div class="vaga">
-                <h3>Desenvolvedor Web</h3>
-                <p>Local: São Paulo - SP</p>
-                <p>Salário: R$ 5.000,00</p>
-                <button>Ver Mais</button>
-            </div>
-
-            <div class="vaga">
-                <h3>Designer Gráfico</h3>
-                <p>Local: Rio de Janeiro - RJ</p>
-                <p>Salário: R$ 4.000,00</p>
-                <button>Ver Mais</button>
+            <div id="vagas-container">
+                <!-- As vagas serão carregadas dinamicamente -->
             </div>
         </section>
 
         <section id="sobre">
             <h2>Sobre Nós</h2>
-            <p>Bem-vindo ao Portal de Vagas, seu destino para encontrar oportunidades de emprego em diversas áreas. Nossa missão é conectar talentos a empresas.</p>
+            <p>Bem-vindo ao Portal de Vagas, seu destino para encontrar oportunidades de emprego em diversas áreas.
+                Nossa missão é conectar talentos a empresas.</p>
         </section>
 
         <section id="contato">
@@ -46,22 +64,26 @@
             <form id="form-contato">
                 <label for="nome">Nome:</label>
                 <input type="text" id="nome" name="nome" required>
-
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
-
                 <label for="mensagem">Mensagem:</label>
                 <textarea id="mensagem" name="mensagem" required></textarea>
-
-                <button type="submit">Enviar</button>
+                <!--<button type="submit">Enviar</button> -->
             </form>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 Portal de Vagas. Todos os direitos reservados.</p>
+        <h2>Empresas Parceiras</h2>
+        <div id="parceiros">
+            <img src="parceiro1.jpg" alt="Logo Empresa Parceira 1">
+            <img src="parceiro2.jpg" alt="Logo Empresa Parceira 2">
+            <img src="parceiro3.jpg" alt="Logo Empresa Parceira 3">
+        </div>
+        <p>&copy; 2025 Portal de Vagas e Publicidade. Todos os direitos reservados.</p>
     </footer>
 
     <script src="script.js"></script>
 </body>
+
 </html>

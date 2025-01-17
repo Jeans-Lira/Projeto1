@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vagas de Emprego</title>
+    <link rel="stylesheet" href="vagas.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Vagas de Emprego</h1>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="vagas">
+            <h2>Vagas Disponíveis</h2>
+            <div id="vagas-container">
+                <!-- As vagas serão carregadas dinamicamente -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Portal de Vagas. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const vagas = [
+                {
+                    titulo: "Desenvolvedor Web",
+                    descricao: "Procura-se desenvolvedor com experiência em HTML, CSS e JavaScript.",
+                    salario: "R$ 3.500,00",
+                    beneficios: "Vale transporte, Vale refeição, Plano de saúde",
+                    endereco: "Rua das Flores, 123, São Paulo - SP",
+                    whatsapp: "https://wa.me/5511999999999",
+                    logo: "logo_empresa1.jpg"
+                },
+                {
+                    titulo: "Analista de Marketing",
+                    descricao: "Analista com foco em marketing digital e campanhas publicitárias.",
+                    salario: "R$ 4.200,00",
+                    beneficios: "Seguro de vida, Auxílio creche, Vale transporte",
+                    endereco: "Av. Central, 456, Rio de Janeiro - RJ",
+                    whatsapp: "https://wa.me/5521999999999",
+                    logo: "logo_empresa2.jpg"
+                }
+            ];
+
+            const vagasContainer = document.getElementById("vagas-container");
+
+            vagas.forEach(vaga => {
+                const vagaElement = `
+                    <div class="vaga">
+                        <img src="${vaga.logo}" alt="Logo da Empresa">
+                        <div class="detalhes">
+                            <h3>${vaga.titulo}</h3>
+                            <p><strong>Descrição:</strong> ${vaga.descricao}</p>
+                            <p><strong>Salário:</strong> ${vaga.salario}</p>
+                            <p><strong>Benefícios:</strong> ${vaga.beneficios}</p>
+                            <p><strong>Endereço:</strong> ${vaga.endereco}</p>
+                            <a class="whatsapp" href="${vaga.whatsapp}" target="_blank">Entre em contato pelo WhatsApp</a>
+                        </div>
+                    </div>
+                `;
+                vagasContainer.insertAdjacentHTML("beforeend", vagaElement);
+            });
+        });
+    </script>
+</body>
+</html>

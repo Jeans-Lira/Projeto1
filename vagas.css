@@ -1,0 +1,84 @@
+/* Reset básico */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Cabeçalho */
+header {
+    background: #007BFF;
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Vagas */
+#vagas {
+    padding: 20px;
+    background: #f4f4f4;
+}
+
+.vaga {
+    display: flex;
+    align-items: flex-start;
+    background: white;
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.vaga img {
+    max-width: 100px;
+    margin-right: 20px;
+}
+
+.vaga .detalhes {
+    flex: 1;
+}
+
+.vaga .detalhes h3 {
+    margin: 0 0 10px 0;
+}
+
+.vaga .detalhes p {
+    margin: 5px 0;
+}
+
+.vaga .whatsapp {
+    display: inline-block;
+    margin-top: 10px;
+    background: #25D366;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.vaga .whatsapp:hover {
+    background: #1DA851;
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    background: #333;
+    color: white;
+    padding: 10px 0;
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publicar Vaga</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Publicar Nova Vaga</h1>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="vagas.html">Vagas</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="publicar-vaga">
+            <h2>Preencha as informações da vaga</h2>
+            <form id="form-publicacao" method="POST">
+                <label for="titulo">Título da Vaga:</label>
+                <input type="text" id="titulo" name="titulo" required>
+
+                <label for="descricao">Descrição da Vaga:</label>
+                <textarea id="descricao" name="descricao" required></textarea>
+
+                <label for="salario">Salário (R$):</label>
+                <input type="number" id="salario" name="salario" min="0" step="0.01" required>
+
+                <label for="beneficios">Benefícios:</label>
+                <textarea id="beneficios" name="beneficios" required></textarea>
+
+                <label for="endereco">Endereço:</label>
+                <input type="text" id="endereco" name="endereco" required>
+
+                <label for="whatsapp">WhatsApp para Contato:</label>
+                <input type="tel" id="whatsapp" name="whatsapp" placeholder="Exemplo: +55 11 99999-9999" required>
+
+                <button type="submit">Publicar Vaga</button>
+            </form>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Portal de Vagas. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        // Formatação do campo salário em reais
+        const salarioInput = document.getElementById('salario');
+        
+        salarioInput.addEventListener('input', function() {
+            let valor = salarioInput.value.replace(/\D/g, ''); // Remove caracteres não numéricos
+            if (valor.length > 2) {
+                valor = valor.replace(/(\d{2})(\d{1,2})$/, '$1,$2'); // Adiciona vírgula para centavos
+                valor = valor.replace(/(\d)(\d{3})(\d{1,2}$)/, '$1.$2,$3'); // Adiciona ponto como separador de milhar
+            }
+            salarioInput.value = valor ? `R$ ${valor}` : ''; // Exibe o valor formatado
+        });
+    </script>
+</body>
+</html>
