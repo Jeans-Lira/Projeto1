@@ -1,0 +1,67 @@
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal de Vagas de Emprego</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Portal de Vagas</h1>
+            <ul>
+                <li><a href="#">Início</a></li>
+                <li><a href="#vagas">Vagas</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="vagas">
+            <h2>Vagas Disponíveis</h2>
+            <div class="vaga">
+                <h3>Desenvolvedor Web</h3>
+                <p>Local: São Paulo - SP</p>
+                <p>Salário: R$ 5.000,00</p>
+                <button>Ver Mais</button>
+            </div>
+
+            <div class="vaga">
+                <h3>Designer Gráfico</h3>
+                <p>Local: Rio de Janeiro - RJ</p>
+                <p>Salário: R$ 4.000,00</p>
+                <button>Ver Mais</button>
+            </div>
+        </section>
+
+        <section id="sobre">
+            <h2>Sobre Nós</h2>
+            <p>Bem-vindo ao Portal de Vagas, seu destino para encontrar oportunidades de emprego em diversas áreas. Nossa missão é conectar talentos a empresas.</p>
+        </section>
+
+        <section id="contato">
+            <h2>Contato</h2>
+            <form id="form-contato">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="mensagem">Mensagem:</label>
+                <textarea id="mensagem" name="mensagem" required></textarea>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Portal de Vagas. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
