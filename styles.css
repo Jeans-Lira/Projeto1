@@ -278,31 +278,40 @@ footer p {
     padding: 5px;
 }
 
+/* Ícones de redes sociais no rodapé */
+#social-media {
+    margin-top: 20px;
+    display: flex; /* Coloca os itens em linha */
+    justify-content: center; /* Centraliza os ícones */
+    gap: 15px; /* Espaçamento entre os ícones */
+}
+
+#social-media a {
+    color: white;
+    font-size: 2rem;
+    transition: color 0.3s, transform 0.3s;
+}
+
+#social-media a:hover {
+    color: #ffd700; /* Cor dourada ao passar o mouse */
+    transform: scale(1.1); /* Efeito de zoom */
+}
+
 /* Responsividade */
 @media (max-width: 768px) {
-    header nav ul {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .vaga {
-        flex-direction: column;
-        align-items: center;
+    #social-media {
         text-align: center;
     }
 
-    .vaga img {
-        margin-bottom: 10px;
+    #social-media a {
+        font-size: 1.8rem;
+        margin: 0 10px;
     }
 }
 
 @media (max-width: 480px) {
-    header nav h1 {
-        font-size: 1.4rem;
-    }
-
-    .vaga .detalhes h3 {
-        font-size: 1.2rem;
+    #social-media a {
+        font-size: 1.6rem;
     }
 
     footer p {

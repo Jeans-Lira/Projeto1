@@ -1,91 +1,114 @@
-/* Reset básico */
-body {
+/* Resetando o estilo básico */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     font-family: Arial, sans-serif;
-    line-height: 1.6;
+}
+
+/* Estilo para o body */
+body {
+    background-color: #f9f9f9;
+    color: #333;
+    font-size: 14px; /* Fonte menor */
 }
 
 /* Cabeçalho */
 header {
     background-color: #007BFF;
     color: white;
-    padding: 1rem 0;
+    padding: 10px;
     text-align: center;
 }
 
 header nav h1 {
-    margin: 0;
-    font-size: 1.8rem;
+    font-size: 18px; /* Tamanho menor do título */
+    margin-bottom: 5px;
 }
 
 header nav ul {
     list-style: none;
-    padding: 0;
     display: flex;
     justify-content: center;
-    margin: 10px 0 0 0;
+    margin-top: 5px;
 }
 
 header nav ul li {
-    margin: 0 15px;
+    margin: 0 10px;
 }
 
 header nav ul li a {
     color: white;
     text-decoration: none;
-    font-size: 1.1rem;
+    font-size: 14px; /* Fonte menor para os links */
+    transition: color 0.3s;
 }
 
 header nav ul li a:hover {
-    text-decoration: underline;
+    color: #FFD700;
 }
 
-/* Formulário de publicação de vaga */
-#formulario-vaga {
-    padding: 20px;
-    max-width: 800px;
-    margin: 20px auto;
-    background-color: #f4f4f4;
+/* Seção principal */
+main {
+    padding: 10px 20px;
+}
+
+#publicar-vaga {
+    background-color: white;
+    padding: 15px;
     border-radius: 8px;
-    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 700px;
+    margin: 20px auto;
+    font-size: 14px; /* Tamanho menor para o conteúdo */
 }
 
-#formulario-vaga h2 {
+#publicar-vaga h2 {
     text-align: center;
-    margin-bottom: 20px;
-    color: #333;
+    font-size: 16px;
+    margin-bottom: 10px;
 }
 
-#form-vaga label {
-    display: block;
-    margin-bottom: 8px;
-    color: #333;
-    font-weight: bold;
+form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
 }
 
-#form-vaga input,
-#form-vaga textarea {
+label {
+    font-size: 13px; /* Fonte menor para os labels */
+    font-weight: normal;
+}
+
+input, textarea, button {
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="number"], input[type="text"], input[type="tel"], textarea {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 1rem;
 }
 
-#form-vaga button {
+textarea {
+    resize: vertical;
+    height: 120px;
+}
+
+button {
     background-color: #007BFF;
     color: white;
-    padding: 15px 20px;
     border: none;
-    border-radius: 5px;
-    font-size: 1.2rem;
     cursor: pointer;
-    width: 100%;
+    font-size: 14px; /* Fonte menor no botão */
+    font-weight: bold;
+    padding: 10px;
+    transition: background-color 0.3s;
+    margin-top: 10px;
 }
 
-#form-vaga button:hover {
+button:hover {
     background-color: #0056b3;
 }
 
@@ -94,29 +117,13 @@ footer {
     background-color: #333;
     color: white;
     text-align: center;
-    padding: 20px 0;
+    padding: 5px;
+    font-size: 12px; /* Fonte menor no rodapé */
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
 footer p {
     margin: 0;
-    font-size: 0.9rem;
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-    header nav ul {
-        flex-direction: column;
-    }
-
-    header nav ul li {
-        margin: 10px 0;
-    }
-
-    #formulario-vaga {
-        padding: 15px;
-    }
-
-    #form-vaga button {
-        padding: 12px 15px;
-    }
 }

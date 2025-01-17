@@ -33,30 +33,52 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
+            // Vagas de exemplo com data de publicação e outras informações
             const vagas = [
                 {
                     titulo: "Desenvolvedor Web",
                     descricao: "Procura-se desenvolvedor com experiência em HTML, CSS e JavaScript.",
                     salario: "R$ 3.500,00",
                     beneficios: "Vale transporte, Vale refeição, Plano de saúde",
-                    endereco: "Rua das Flores, 123, São Paulo - SP",
+                    endereco: "Rua das Flores",  // Endereço sem número
+                    numero: "123",  // Número da residência
+                    bairro: "Centro",  // Bairro
+                    cidade: "São Paulo",  // Cidade
+                    estado: "SP",  // Estado
                     whatsapp: "https://wa.me/5511999999999",
-                    logo: "logo_empresa1.jpg"
+                    logo: "logo_empresa1.jpg",
+                    dataPublicacao: "2025-01-01"  // Data de publicação da vaga
                 },
                 {
                     titulo: "Analista de Marketing",
                     descricao: "Analista com foco em marketing digital e campanhas publicitárias.",
                     salario: "R$ 4.200,00",
                     beneficios: "Seguro de vida, Auxílio creche, Vale transporte",
-                    endereco: "Av. Central, 456, Rio de Janeiro - RJ",
+                    endereco: "Av. Central",  // Endereço sem número
+                    numero: "456",  // Número da residência
+                    bairro: "Centro",  // Bairro
+                    cidade: "Rio de Janeiro",  // Cidade
+                    estado: "RJ",  // Estado
                     whatsapp: "https://wa.me/5521999999999",
-                    logo: "logo_empresa2.jpg"
+                    logo: "logo_empresa2.jpg",
+                    dataPublicacao: "2025-01-10"  // Data de publicação da vaga
                 }
             ];
 
             const vagasContainer = document.getElementById("vagas-container");
 
-            vagas.forEach(vaga => {
+            vagas.forEach((vaga, index) => {
+                const enderecoCompleto = `${vaga.endereco}, ${vaga.numero}, ${vaga.cidade} - ${vaga.estado}`;
+
+                // Calculando a diferença de tempo entre a data de publicação e a data atual
+                const dataPublicacao = new Date(vaga.dataPublicacao);
+                const dataAtual = new Date();
+                const diffTime = dataAtual - dataPublicacao;
+                const diffDays = diffTime / (1000 * 3600 * 24);
+
+                // Se a vaga estiver expirada (mais de 30 dias), não exibe a vaga
+                if (diffDays > 30) return;
+
                 const vagaElement = `
                     <div class="vaga">
                         <img src="${vaga.logo}" alt="Logo da Empresa">
@@ -65,14 +87,22 @@
                             <p><strong>Descrição:</strong> ${vaga.descricao}</p>
                             <p><strong>Salário:</strong> ${vaga.salario}</p>
                             <p><strong>Benefícios:</strong> ${vaga.beneficios}</p>
-                            <p><strong>Endereço:</strong> ${vaga.endereco}</p>
+                            <p><strong>Endereço:</strong> ${enderecoCompleto}</p>
                             <a class="whatsapp" href="${vaga.whatsapp}" target="_blank">Entre em contato pelo WhatsApp</a>
+                            <button class="excluir" onclick="excluirVaga(${index})">Excluir</button>  <!-- Botão de excluir -->
                         </div>
                     </div>
                 `;
                 vagasContainer.insertAdjacentHTML("beforeend", vagaElement);
             });
         });
+
+        // Função para excluir uma vaga
+        function excluirVaga(index) {
+            const vagasContainer = document.getElementById("vagas-container");
+            const vagaElement = vagasContainer.children[index];
+            vagasContainer.removeChild(vagaElement);
+        }
     </script>
 </body>
 </html>
